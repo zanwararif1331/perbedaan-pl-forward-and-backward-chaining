@@ -1,1 +1,0 @@
-# perbedaan-pl-forward-and-backward-chaining
