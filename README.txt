@@ -1,27 +1,26 @@
-				PL RESOLUTION, BACKWARD CHAINING AND FORWARD CHAINING
+PL RESOLUTION, BACKWARD CHAINING DAN FORWARD CHAINING
 
-There are three tasks: Forward Chaining, Backward Chaining, and Propositional Logic. The details of each of these are as follows:-
+Jadi, dari program ini terdapat 3 tugas, yaitu: Forward Chaining, Backward Chaining, dan Propositional Logic.
 
-1) Forward Chaining: In this we are given a knowledge base which includes the rules and the facts. The basic idea behind forward chaining is that
-	from facts we go through the rules and see which of them can be fired. The rule which is fired,its consequence is added to the list of facts. Then the collective list of facts are then used to fire further rules.
-	
-2)Backward Chaining: In this we have the conclusion and we have to prove that it can be derived by going backwards i.e from rules to facts. So, on each iteration, we obtain a list of goals(which is the list of premises ) and using these premises we try to reach to the facts. If we can then, it means the conclusion can be derived out of those facts. If not, then conclusion cannot be proved out of the given facts.
-	
-3) Propositional Logic: Input is given to us in the HORN clause. So, for implementing propositional logic to work, we have to convert the horn form of the clause into Conjunctive Normal Form(CNF). The rule applied to form a resolved clause from two clauses is as follows:-
-						
-						(A v B)	(-B v C) will give (A v C).
-When following this rule, two things needs to be considered. First is that we have to remove duplicate literal which may arise when we resolve the
-	clause. Second, and the most important, if a clause have literals such that a positive and negative type of that literal exists(Eg. say A v B v C v -A),then we do not include this clause. This is because, its is going to be calculated to 1.
-	
-	Compilation and Running Instruction
-	1) Compile the program: javac pl.java
-	2) Run the program: java pl -t 1 -kb kb2.txt -q q2.txt -oe output.txt -ol logs.txt
+1) Forward Chaining: Di sini kita telah memberikan pengetahuan-pengetahuan dasar yang mencakup aturan dan fakta. Ide dasar dibalik rangkaian maju adalah itu
+dari fakta kita mempelajari aturan dan melihat mana di antara mereka yang bisa dipecat. Aturan yang disalahkan atau dipecat (?), akan dimasukkan ke dalam list fakta. Kemudian list fakta yang telah dikumpulkan kemudian digunakan untuk membuat aturan baru yang lebih kompleks.
 
-	Time taken to run resolution for case I: 35-40 seconds on aludra machine
-	Time taken to run resolution for case II: 2:30 to 3 minutes on aludra machine.
-	
-	Similarities/Difference between Task 1,2 and 3
-				
-From the logs of the program, it is evident that forward chaining is the best as it takes shorter time compared to other approaches. In backward chaining cycles are detected which causes the delays in the output. Forward and backward chaining work only for horn clauses.But resolution can work for any type of clause but the main problem is that resolution takes a lot of time compared to other apporaches. The logs of resolution are a lot bigger compared to forward and backward chaining techniques. The subuset of clauses becomes bigger as more number of clauses get resolved.
-		
+2) Backward Chaining: Di sini kita memiliki kesimpulan dan kita harus membuktikan bahwa kesimpulan tsb terjadi, dengan cara menganalisa mundur, yaitu dari aturan ke fakta. Jadi, di setiap iterasinya, kita sudah punya sudah punya daftar goals (atau disini disebutkan sebagai tempat atau bagain pengantarnya) dan kita akan mencoba menggunakan hal ini kita untuk mendapat fakta dari dari kesimpulan tsb. Kalau bisa, berarti kesimpulannya bisa kita dapatkan dari fakta-fakta itu. Dan jika tidak, maka kesimpulannya tidak dapat kita buktikan dari fakta-fakta yang tersebut.
+
+3) Logika Proposisional: Input-an akan diberikan pada kita dalam klausa HORN. Jadi, untuk mengimplementasikan logika proposisional, kita harus mengubah bentuk klausa klausa menjadi Conjunctive Normal Form (CNF). Aturan yang diterapkan untuk membentuk suatu resolved klausa dari dua klausa adalah sebagai berikut: -
+
+(A v B) (-B v C) akan menghasilkan (A v C).
+Saat mengikuti aturan ini, ada 2 hal yang perlu diperhatikan. Pertama adalah kita perlu menghapus duplikat literal yang mungkin akan muncul saat kita telah menyelesaikan klausa-nya. Kedua, dan yang paling penting, jika klausa memiliki literal sehingga ada tipe positif dan negatif dari literal tersebut (Misalnya, katakanlah A v B v C v -A), maka kami tidak menyertakan klausa ini. Ini karena, nilainya akan dihitung menjadi 1.
+
+Kompilasi dan Instruksi Menjalankan
+1) Compile program: javac pl.java
+2) Jalankan program: java pl -t 1 -kb kb2.txt -q q2.txt -oe output.txt -ol logs.txt
+
+Waktu yang dibutuhkan untuk menjalankan resolusi untuk kasus I: 35-40 detik pada mesin aludra
+Waktu yang dibutuhkan untuk menjalankan resolusi untuk kasus II: 2:30 hingga 3 menit pada mesin aludra.
+
+Persamaan / Perbedaan antara Tugas 1,2 dan 3
+
+Kesimpulan saya:
+Jadi, pada program ini membedakan bagaimana kinerja fungsi Forward dan Backward Chaining dengan PL Resolution, yang dimana Forward dan Backward Chaining memiliki keterbatasan yang hanya dapat digunakan pada klausa, sedangkan PL Resolution dapat bekerja untuk semua jenis klausa hanya saja akan memakan waktu yang lebih banyak dimana perbandingannya pada perhitungan kasus I dan II, yaitu 35-40 detik dengan 2,5-3 menit. Hal ini dikarenakan Log dari Resolution lebih banyak daripada Forward dan Backward Chaining.
 
